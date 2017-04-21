@@ -17,6 +17,8 @@ gulp.task('js', () => {
 
 gulp.task('sass', () => {
   return gulp.src('src/scss/**/*.scss')
+
+  //this aloows us to continually use gulp without restarting it when we have an error tah breaks teh gulp steam! (plumber)
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS({ compatibility: 'ie8' }))
