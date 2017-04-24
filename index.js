@@ -1,9 +1,11 @@
 const express         = require('express');
 const expressLayouts  = require('express-ejs-layouts');
 const bodyParser      = require('body-parser');
+const User            = require('./model/registration');
 
 //sits on top of mongdb to allow easier acces
 const mongoose        = require('mongoose');
+const session         = require('express-session');
 //puts in a system to override natural ability of the program which allows us to put and push etc
 const methodOverride  = require('method-override');
 const env             = require('./config/env');
@@ -29,7 +31,34 @@ app.use(methodOverride((req) => {
     return method;
   }
 }));
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'ssh it\'s a secret',
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use((req, res, next) => {
+  if (!req.session.userId) return next();
+
+  User
+  .findById(req.session.userId)
+  .then((user) => {
+    if(!user) {
+      return req.session.regenerate(() => {
+        res.redirect('/');
+      });
+    }
+
+    // Re-assign the session id for good measure
+    req.session.userId = user._id;
+
+    res.locals.user = user;
+    res.locals.isLoggedIn = true;
+
+    next();
+  });
+
+});
 
 app.use(router);
-
 app.listen(env.port, () => console.log(`Server up and running on port: ${env.port}.`));
