@@ -18,3 +18,23 @@ userSchema.pre('save', function(next) {
   }
   next();
 });
+
+userSchema
+  .virtual('passwordConfirmation')
+  .set(function setPasswordConfirmation(passwordConfirmation) {
+    this._passwordConfirmation = passwordConfirmation;
+  });
+
+userSchema.pre('validate', function checkPassword(next) {
+  if(this.isModified('password') && this._passwordConfirmation !==
+this.password) {
+    this.invalidate('passwordConfirmation', 'Something does not match...');
+  }
+  next();
+});
+
+userSchema.methods.validatePassword = function validatePassword(password) {
+  return bcrypt.compareSync(password, this.password);
+};
+
+module.exports = mongoose.model('User', userSchema);

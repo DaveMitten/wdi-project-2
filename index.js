@@ -14,8 +14,10 @@ mongoose.connect(env.db);
 
 //embedded javascript allowing us to wrtie in html and create dynamic changing info.
 app.set('view engine', 'ejs');
-//creates a 
+//creates a
 app.set('views', `${__dirname}/views`);
+
+// app.get('/', (req, res) => res.render('home'));
 
 app.use(expressLayouts);
 app.use(express.static(`${__dirname}/public`));
