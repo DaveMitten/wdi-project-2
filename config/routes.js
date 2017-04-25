@@ -4,16 +4,34 @@ const router        = express.Router();
 const registrations = require('../controller/registrationController');
 const sessions      = require('../controller/usersessionController');
 const workspace     = require('../controller/workspaceController');
-// const registration = require('../controller/registrationController');
-// const register = require('../controller/registrationController');
 
-router.get('/', (req, res) => res.render('index'));
+function secureRoute(req, res, next) {
+  if (!req.session.userId) {
+    return req.session.regenerate(() => {
+      req.flash('danger', 'You must be logged in.');
+      res.redirect('/login');
+    });
+  }
+
+  return next();
+}
+
+router.get('/', (req, res) => res.render('statics/home'));
 
 router.route('/workspaces')
   .get(workspace.index)
-  .post(workspace.create);
+  .post(secureRoute, workspace.create);
+
+router.route('/workspaces/new')
+  .get(secureRoute, workspace.new);
+
 router.route('/workspaces/:id')
-  .get(workspace.show);
+  .get(workspace.show)
+  .put(secureRoute, workspace.update)
+  .delete(secureRoute, workspace.delete);
+
+router.route('/workspaces/:id/edit')
+  .get(secureRoute, workspace.edit);
 
 router.route('/register')
   .get(registrations.new)

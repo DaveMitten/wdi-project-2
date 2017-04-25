@@ -11,6 +11,7 @@ const methodOverride  = require('method-override');
 const env             = require('./config/env');
 const router          = require('./config/routes');
 const app             = express();
+const flash           = require('express-flash');
 
 mongoose.connect(env.db);
 
@@ -19,7 +20,6 @@ app.set('view engine', 'ejs');
 //creates a
 app.set('views', `${__dirname}/views`);
 
-// app.get('/', (req, res) => res.render('home'));
 
 app.use(expressLayouts);
 app.use(express.static(`${__dirname}/public`));
@@ -37,6 +37,9 @@ app.use(session({
   saveUninitialized: false
 }));
 
+app.use(flash());
+
+
 app.use((req, res, next) => {
   if (!req.session.userId) return next();
 
@@ -45,11 +48,11 @@ app.use((req, res, next) => {
   .then((user) => {
     if(!user) {
       return req.session.regenerate(() => {
+        req.flash('danger', 'You must be logged in.');
         res.redirect('/');
       });
     }
 
-    // Re-assign the session id for good measure
     req.session.userId = user._id;
 
     res.locals.user = user;

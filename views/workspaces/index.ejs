@@ -2,7 +2,10 @@
 <ul>
   <% workspace.forEach(workspace => { %>
 
-<li><%= workspace.name %></li>
+<li><a href="/workspaces/<%= workspace._id %>"><%= workspace.name %></a></li>
 
 <% }); %>
 </ul>
+
+
+<%# note from nat%>
