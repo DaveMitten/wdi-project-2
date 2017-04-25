@@ -5,9 +5,10 @@ const bcrypt   = require('bcrypt');
 //this allows me to create a user creation page
 //do i want more info here? Like address?? does taht matter hor this specific project ???
 const userSchema = new mongoose.Schema({
-  username: String,
+  username: { type: String },
   email: { type: String, require: true, unique: true },
-  password: { type: String, require: true }
+  password: { type: String, require: true },
+  workspaces: [{type: mongoose.Schema.Types.ObjectId, ref: 'Workspace'}]
 
 
 

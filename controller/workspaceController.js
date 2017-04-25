@@ -1,4 +1,6 @@
 const Workspace = require('../model/workspace');
+// const workspace = new Workspace(req.body);
+// workspace.user = req.user._id;
 
 function workspaceIndex(req, res) {
   Workspace
@@ -33,8 +35,12 @@ function workspaceCreate(req, res) {
     .create(req.body)
     .then(workspace => {
       if(!workspace) return res.render('error', { error: 'No workspace was created!' });
+      workspace.user.push()
       return res.redirect('/workspaces');
-    })
+    }
+)
+      ///so i need to now .push the newly created workspace to the array (objectId)  that is created with the user model schema.
+
     .catch(err => {
       return res.render('error', { error: err});
     });
@@ -46,7 +52,9 @@ function workspaceEdit(req, res) {
    .findById(req.params.id)
    .exec()
    .then(workspace => {
-     if (!workspace) {
+     if (req.user._id !== workspace.user) {
+       return res.render('error', { error: 'Not eligible for edit.' });
+     } else if (!workspace) {
        return res.render('error', { error: 'No workspaces found.' });
      }
      return res.render('workspaces/edit', { workspace });
@@ -90,6 +98,9 @@ function workspaceDelete(req, res) {
     .findByIdAndRemove(req.params.id)
     .exec()
     .then(() => {
+      if (workspace.user !== req.user._id) {
+        return res.render('error', { error: 'Not elible for edit.' });
+      }
       return res.redirect('/workspaces');
     })
     .catch(err => {
