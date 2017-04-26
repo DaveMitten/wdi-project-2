@@ -1,4 +1,38 @@
+html {
+  background-image: url('/images/proj2.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+}
+
 body {
-  font-family: sans-serif;
-  background: white;
+  opacity: 1;
+}
+
+form.container {
+}
+a {
+  color: black;
+
+}
+
+form {
+  margin: 35px auto;
+
+}
+
+.centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+}
+.footer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
 }

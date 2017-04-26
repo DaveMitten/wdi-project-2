@@ -22,6 +22,10 @@ router.route('/workspaces')
   .get(workspace.index)
   .post(secureRoute, workspace.create);
 
+router.route('/users/:id/workspaces')
+  .get(workspace.my)
+  .post(secureRoute, workspace.create);
+
 router.route('/workspaces/new')
   .get(secureRoute, workspace.new);
 

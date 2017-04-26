@@ -1,2 +1,5 @@
-const a = 'hello';
-console.log(`${a}`);
+$(init);
+
+function init() {
+  console.log(`yo`);
+}

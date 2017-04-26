@@ -6,7 +6,7 @@ mongoose.Promise = require('bluebird');
 //the envelope is the system that trasposrt our files to browser and connect up the database to mongoose????ask about this.
 const env       = require('../config/env');
 //requiring the models in our seeds
-const Workspace = require('../model/createWorkSpace');
+const Workspace = require('../model/workspace');
 
 mongoose.connect(env.db, () => {
   //this will only appear when you use your forrm to enter into the shap of the model will be sorted out by the controller
@@ -19,9 +19,9 @@ Workspace.collection.drop();
 Workspace
 .create([
   {
-    name: 'Coffeeplace',
+    name: 'TEST DB/SEEDS',
     website: 'http://www.coffeerepublic.co.uk/',
-    description: 'esogafmsdgmsdnfjkanekfnjq'
+    description: 'test test test test'
   }
 ])
 .then(workspaces => {

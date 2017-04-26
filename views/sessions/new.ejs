@@ -1,16 +1,14 @@
 <% if (locals.message) { %>
   <p><%= message %></p>
 <% } %>
-
-
-<form method="POST" action="/login">
-  <div>
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email">
+<form  method="POST" action="/login" class="centered">
+  <div class="w-40 form-group">
+    <label for="email">Email </label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="email">
   </div>
-  <div>
+  <div class="w-40 form-group">
     <label for="password">Password</label>
-    <input type="password" name="password" id="password">
+    <input type="password" class="form-control" id="password" name="password" placeholder="password">
   </div>
-<button class="button">Submit</button>
+  <button type="submit" class="btn btn-default">Submit</button>
 </form>

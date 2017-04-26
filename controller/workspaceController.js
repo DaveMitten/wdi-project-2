@@ -1,23 +1,38 @@
 const Workspace = require('../model/workspace');
 // const workspace = new Workspace(req.body);
 // workspace.user = req.user._id;
+const User      = require('../model/registration');
 
 function workspaceIndex(req, res) {
   Workspace
    .find()
    .exec()
    .then(workspace => {
-     return res.render('workspaces/index', { workspace });
+     return res.render('workspaces/index', { workspace, title: 'All workspaces' });
    })
    .catch(err => {
      return res.render('error', { error: err });
    });
+}
 
+function workspaceMyIndex(req, res) {
+  Workspace
+   .find({
+     user: res.locals.user._id
+   })
+   .exec()
+   .then(workspace => {
+     return res.render('workspaces/index', { workspace, title: 'My workspaces' });
+   })
+   .catch(err => {
+     return res.render('error', { error: err });
+   });
 }
 
 function workspaceShow(req, res) {
   Workspace
   .findById(req.params.id)
+  .populate('user')
   .exec()
   .then(workspace => {
     if(!workspace){
@@ -32,19 +47,31 @@ function workspaceShow(req, res) {
 
 function workspaceCreate(req, res) {
   Workspace
-    .create(req.body)
+    .create({
+      name: req.body.name,
+      website: req.body.website,
+      description: req.body.description,
+      user: res.locals.user._id
+    })
     .then(workspace => {
+      User.findById(res.locals.user._id)
+      .exec()
+      .then(user => {
+        console.log(user);
+        user.workspaces.push(workspace.id);
+        user.save();
+        console.log(user);
+      });
       if(!workspace) return res.render('error', { error: 'No workspace was created!' });
-      workspace.user.push()
+      User.findById(req.session.userId).exec().then(userF => {
+        userF.workspaces.push(workspace);
+      });
       return res.redirect('/workspaces');
-    }
-)
+    })
       ///so i need to now .push the newly created workspace to the array (objectId)  that is created with the user model schema.
-
     .catch(err => {
       return res.render('error', { error: err});
     });
-
 }
 
 function workspaceEdit(req, res) {
@@ -52,11 +79,12 @@ function workspaceEdit(req, res) {
    .findById(req.params.id)
    .exec()
    .then(workspace => {
-     if (req.user._id !== workspace.user) {
+     if (User.id !== Workspace.user) {
        return res.render('error', { error: 'Not eligible for edit.' });
      } else if (!workspace) {
        return res.render('error', { error: 'No workspaces found.' });
      }
+     User.findById();
      return res.render('workspaces/edit', { workspace });
    })
    .catch(err => {
@@ -66,6 +94,9 @@ function workspaceEdit(req, res) {
 
 
 function workspaceNew(req, res){
+  // User.findById(req.session.userId).exec().then(user => {
+  //   // console.log(user, '*******************************')
+  // });
   return res.render('workspaces/new');
 }
 
@@ -98,7 +129,8 @@ function workspaceDelete(req, res) {
     .findByIdAndRemove(req.params.id)
     .exec()
     .then(() => {
-      if (workspace.user !== req.user._id) {
+      if (Workspace.user !== req.user.id) {
+        console.log(req.user.id);
         return res.render('error', { error: 'Not elible for edit.' });
       }
       return res.redirect('/workspaces');
@@ -115,5 +147,6 @@ module.exports = {
   create: workspaceCreate,
   edit: workspaceEdit,
   update: workspaceUpdate,
-  delete: workspaceDelete
+  delete: workspaceDelete,
+  my: workspaceMyIndex
 };
