@@ -1,6 +1,6 @@
 <% if (locals.isLoggedIn) { %>
 
-          <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+          <nav class="navbar navbar-toggleable-md navbar-light bg-faded l-in">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,13 +29,13 @@
           </nav>
           <% } else { %>
           <nav>
-            <ul class="breadcrumb">
+            <ul class=" centered breadcrumb">
               <li>
                 <a href="/login">Log In</a>
               </li>
               <li>
                 <a href="/register">Register</a>
-                </li>
+              </li>
             </ul>
           </nav>
         <% } %>
