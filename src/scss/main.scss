@@ -12,17 +12,18 @@ form {
   left: 60%;
   border-radius: 4px;
 }
+.img {
+  background-image: url('/images/proj2.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+  filter: blur(6px);
+}
 
 @media only screen
   and (min-device-width: 320px)
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    .img {
-      background-image: url('/images/proj2.jpg');
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-      height: 100vh;
-      filter: blur(6px);
     .centered {
       position: absolute;
       left: 53%;
@@ -56,23 +57,14 @@ form {
       color: rgba(16, 7, 0, 1);
       font-family: 'Rock Salt', cursive;
       font-size: 4em;
+      text-shadow:
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      2px 2px 0 #000; 
 
     }
-    .body {
-      font-family: 'Quicksand', sans-serif;
-      color: black;
-    }
-
-    form {
-      margin: 35px auto;
-
-    }
-    .background {
-      background-color: rgba(255, 245, 202, 0.7);
-      left: 60%;
-      border-radius: 4px;
-    }
-}
+  }
 
 
 
@@ -80,13 +72,6 @@ form {
   and (min-device-width: 768px)
   and (max-device-width: 1024px)
   and (-webkit-min-device-pixel-ratio: 1) {
-    .img {
-      background-image: url('/images/proj2.jpg');
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-      height: 100vh;
-      filter: blur(6px);
-
     .centered {
       position: absolute;
       left: 53%;
@@ -120,33 +105,18 @@ form {
       color: rgba(16, 7, 0, 1);
       font-family: 'Rock Salt', cursive;
       font-size: 7em;
-
-    }
-    .body {
-      font-family: 'Quicksand', sans-serif;
-      color: black;
-    }
-
-    form {
-      margin: 35px auto;
-
-    }
-    .background {
-      background-color: rgba(255, 245, 202, 0.7);
-      left: 60%;
-      border-radius: 4px;
-    }
+      text-shadow:
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      2px 2px 0 #000;
+     }
 }
 @media screen
   and (min-device-width: 1200px)
   and (max-device-width: 1600px)
   and (-webkit-min-device-pixel-ratio: 1) {
-    .img {
-      background-image: url('/images/proj2.jpg');
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-      height: 100vh;
-      filter: blur(6px);
+
 
         .centered {
           position: absolute;
@@ -182,21 +152,10 @@ form {
           color: rgba(255, 245, 202, 1);
           font-family: 'Rock Salt', cursive;
           font-size: 6em;
-
-        }
-        .body {
-          font-family: 'Quicksand', sans-serif;
-          color: black;
-        }
-
-        }
-        form {
-          margin: 35px auto;
-
-        }
-        .background {
-          background-color: rgba(255, 245, 202, 0.7);
-          left: 60%;
-          border-radius: 4px;
-        }
+          text-shadow:
+          -2px -2px 0 #000,
+          2px -2px 0 #000,
+          -2px 2px 0 #000,
+          2px 2px 0 #000;
+      }
 }
