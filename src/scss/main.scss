@@ -1,38 +1,194 @@
-html {
+.img {
   background-image: url('/images/proj2.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 100vh;
+  filter: blur(6px);
 
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .img {
+      background-image: url('/images/proj2.jpg');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      height: 100vh;
+      filter: blur(6px);
+    .centered {
+      position: absolute;
+      left: 53%;
+      top: 44%;
+      transform: translate(-50%,-50%);
+      z-index: 2;
+    }
+    .breadcrumb {
+      position: absolute;
+      left: 25%;
+      top: 5%;
+      transform: translate(-50%,-50%);
+      z-index: 2;
+      background-color: none;
+
+    }
+    .footer {
+      position: absolute;
+      left: 52%;
+      top: 92%;
+      transform: translate(-50%,-50%);
+      z-index: 2;
+      background-color: rgba(255, 245, 202, 0.7);
+      border-radius: 4px;
+      font-size: 8px;
+      text-align: center;
+    }
+    .title {
+      background-color: rgba(255, 245, 202, 0.7);
+      border-radius: 4px;
+      color: rgba(16, 7, 0, 1);
+      font-family: 'Rock Salt', cursive;
+      font-size: 4em;
+
+    }
+    .body {
+      font-family: 'Quicksand', sans-serif;
+      color: black;
+    }
+
+    form {
+      margin: 35px auto;
+
+    }
+    .background {
+      background-color: rgba(255, 245, 202, 0.7);
+      left: 60%;
+      border-radius: 4px;
+    }
 }
 
-body {
-  opacity: 1;
-}
 
-form.container {
-}
-a {
-  color: black;
 
-}
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .img {
+      background-image: url('/images/proj2.jpg');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      height: 100vh;
+      filter: blur(6px);
 
-form {
-  margin: 35px auto;
+    .centered {
+      position: absolute;
+      left: 53%;
+      top: 44%;
+      transform: translate(-50%,-50%);
+      z-index: 2;
+    }
+    .breadcrumb {
+      position: absolute;
+      left: 25%;
+      top: 5%;
+      transform: translate(-50%,-50%);
+      z-index: 2;
+      background-color: inherit;
 
-}
+    }
+    .footer {
+      position: absolute;
+      left: 50%;
+      top: 92%;
+      transform: translate(-50%,-50%);
+      z-index: 2;
+      background-color: rgba(255, 245, 202, 0.7);
+      border-radius: 4px;
+      text-align: center;
 
-.centered {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  z-index: 2;
+    }
+    .title {
+      background-color: rgba(255, 245, 202, 0.7);
+      border-radius: 4px;
+      color: rgba(16, 7, 0, 1);
+      font-family: 'Rock Salt', cursive;
+      font-size: 7em;
+
+    }
+    .body {
+      font-family: 'Quicksand', sans-serif;
+      color: black;
+    }
+
+    form {
+      margin: 35px auto;
+
+    }
+    .background {
+      background-color: rgba(255, 245, 202, 0.7);
+      left: 60%;
+      border-radius: 4px;
+    }
 }
-.footer {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  z-index: 2;
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .img {
+      background-image: url('/images/proj2.jpg');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      height: 100vh;
+      filter: blur(6px);
+
+        .centered {
+          position: absolute;
+          left: 46%;
+          top: 44%;
+          transform: translate(-50%,-50%);
+          z-index: 2;
+        }
+        .breadcrumb {
+          position: absolute;
+          left: 8%;
+          top: 5%;
+          transform: translate(-50%,-50%);
+          z-index: 2;
+          background-color: inherit;
+
+        }
+        .footer {
+          position: absolute;
+          left: 48%;
+          top: 92%;
+          transform: translate(-50%,-50%);
+          z-index: 2;
+          background-color: rgba(255, 245, 202, 0.7);
+          border-radius: 4px;
+          text-align: center;
+
+        }
+        .title {
+          // background-color: rgba(255, 245, 202, 0.7);
+          border-radius: 4px;
+          // color: rgba(16, 7, 0, 1)
+          color: rgba(255, 245, 202, 1);
+          font-family: 'Rock Salt', cursive;
+          font-size: 6em;
+
+        }
+        .body {
+          font-family: 'Quicksand', sans-serif;
+          color: black;
+        }
+
+        }
+        form {
+          margin: 35px auto;
+
+        }
+        .background {
+          background-color: rgba(255, 245, 202, 0.7);
+          left: 60%;
+          border-radius: 4px;
+        }
 }
