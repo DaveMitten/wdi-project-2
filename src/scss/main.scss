@@ -48,11 +48,10 @@ form {
 #newheading
 {
   position: absolute;
-  left: 20%;
+  left: 15%;
   top: 0%;
   transform: translate(-50%,-50%);
   z-index: 2;
-  color: white;
   border-radius: 4px;
 
 }
@@ -84,14 +83,12 @@ form {
       transform: translate(-50%,-50%);
       z-index: 2;
       // background-color: rgba(255, 245, 202, 0.7);
-      color: white;
       border-radius: 4px;
       font-size: 8px;
       text-align: center;
     }
 
       .title {
-        color: white;
         font-family: 'Abril Fatface', cursive;
         font-size: 5em;
         text-shadow:
@@ -131,14 +128,12 @@ form {
       transform: translate(-50%,-50%);
       z-index: 2;
       // background-color: rgba(255, 245, 202, 0.7);
-      color: white;
 
       border-radius: 4px;
       text-align: center;
 
     }
     .title {
-      color: white;
       font-family: 'Abril Fatface', cursive;
       font-size: 5em;
       text-shadow:
@@ -177,13 +172,11 @@ form {
           transform: translate(-50%,-50%);
           z-index: 2;
           // background-color: rgba(255, 245, 202, 0.7);
-          color: white;
           border-radius: 4px;
           text-align: center;
 
         }
         .title {
-          color: white;
           font-family: 'Abril Fatface', cursive;
           font-size: 5em;
           text-shadow:
@@ -199,7 +192,6 @@ form {
         transform: translate(-50%,-50%);
         z-index: 2;
         // background-color: rgba(255, 245, 202, 0.7);
-        color: white;
         border-radius: 4px;
       }
 }
