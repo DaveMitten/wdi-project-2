@@ -1,9 +1,17 @@
-.img {
-  background-image: url('/images/proj2.jpg');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  height: 100vh;
-  filter: blur(6px);
+.body {
+  font-family: 'Quicksand', sans-serif;
+  color: black;
+}
+
+form {
+  margin: 35px auto;
+
+}
+.background {
+  background-color: rgba(255, 245, 202, 0.7);
+  left: 60%;
+  border-radius: 4px;
+}
 
 @media only screen
   and (min-device-width: 320px)
