@@ -7,7 +7,6 @@
   <% workspace.forEach(workspace => { %>
 
 <li class="col"><a href="/workspaces/<%= workspace._id %>"><%= workspace.name %></a></li>
-<li class="col" id="imageindex"><img src="<%= workspace.image %>" alt="<%= workspace.name %>'s image"></li>
 
 <% }); %>
 </ul>
