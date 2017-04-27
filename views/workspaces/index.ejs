@@ -1,13 +1,18 @@
 <div class="container"  id="workspaces">
   <h1><%= title %></h1>
-<ul>
+
+
+
+<ul class="row">
   <% workspace.forEach(workspace => { %>
 
-<li><a href="/workspaces/<%= workspace._id %>"><%= workspace.name %></a></li>
+<li class="col"><a href="/workspaces/<%= workspace._id %>"><%= workspace.name %></a></li>
+<li class="col" id="imageindex"><img src="<%= workspace.image %>" alt="<%= workspace.name %>'s image"></li>
 
 <% }); %>
 </ul>
 </div>
+
 
 
 <%# note from nat%>

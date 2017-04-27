@@ -51,7 +51,8 @@ function workspaceCreate(req, res) {
       name: req.body.name,
       website: req.body.website,
       description: req.body.description,
-      user: res.locals.user._id
+      user: res.locals.user._id,
+      image: req.body.image
     })
     .then(workspace => {
       User.findById(res.locals.user._id)

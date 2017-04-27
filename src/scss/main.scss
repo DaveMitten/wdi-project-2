@@ -1,6 +1,19 @@
+img{
+  max-width: 400px;
+  max-height: 400px;
+}
+#imageindex {
+  max-width: 200px;
+  max-height: 200px;
+}
+
 .body {
   font-family: 'Quicksand', sans-serif;
   color: white;
+}
+
+.breadcrumb {
+  left: 25% !important;
 }
 
 form {
@@ -8,7 +21,6 @@ form {
 
 }
 .background {
-  background-color: rgba(255, 255, 255, 0.7);
   left: 60%;
   border-radius: 4px;
 }
@@ -20,10 +32,13 @@ form {
   // filter: blur(6px);
 }
 
+.breadcrumb {
+  left: 25% !important;
+}
 
 #navbarin {
   position: absolute;
-  left: 10%;
+  left: 45%;
   top: 9%;
   transform: translate(-50%,-50%);
   z-index: 2;
@@ -45,15 +60,46 @@ form {
   z-index: 2;
 
 }
+#editpage {
+  position: absolute;
+  left: 49%;
+  top: 40% !important;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+
+}
+#show{
+  position: absolute !important;
+  left: 49%;
+  top: 47%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+
+}
+.image {
+  color: black;
+}
+
 #newheading
 {
   position: absolute;
-  left: 15%;
-  top: 0%;
+  left: 20%;
+  top: 20%;
   transform: translate(-50%,-50%);
   z-index: 2;
   border-radius: 4px;
 
+}
+#newtable{
+  position: absolute;
+  left: 46%;
+  top: 49%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+
+}
+#description, #website, #name {
+  color: black;
 }
 
 @media only screen
@@ -61,19 +107,19 @@ form {
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
     .centered {
-      position: absolute;
-      left: 53%;
+      position: absolute !important;
+      left: 50%;
       top: 44%;
       transform: translate(-50%,-50%);
       z-index: 2;
     }
     .breadcrumb {
       position: absolute;
-      left: 25%;
-      top: 5%;
       transform: translate(-50%,-50%);
       z-index: 2;
-      background-color: none;
+      left: 40% !important;
+      top: 10% !important;
+      width: 75% !important;
 
     }
     .footer {
@@ -90,13 +136,89 @@ form {
 
       .title {
         font-family: 'Abril Fatface', cursive;
-        font-size: 5em;
+        font-size: 4em;
         text-shadow:
         -1px -1px 0 #000,
         1px -1px 0 #000,
         -1px 1px 0 #000,
         1px 1px 0 #000;
       }
+      .breadcrumb {
+
+      }
+
+      #navbarin {
+        position: absolute;
+        left: 45%;
+        top: 9%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+
+      }
+      .alert {
+        position: absolute;
+        left: 49%;
+        top: 30%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+      }
+
+      #new {
+        position: absolute;
+        left: 49%;
+        top: 30%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+
+      }
+      #editpage{
+        position: absolute;
+        left: 49%;
+        top: 40%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+
+      }
+      #show{
+        position: absolute;
+        left: 50%;
+        top: 68%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+
+      }
+      #newheading
+      {
+        position: absolute;
+        left: 37%;
+        top: 26%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+        border-radius: 4px;
+
+      }
+      #newtable{
+        position: absolute;
+        left: 46%;
+        top: 59%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+
+      }
+      #description, #website, #name, #image {
+        color: black;
+      }
+      #workspaces {
+       position: absolute;
+       left: 40%;
+       top: 35%;
+       transform: translate(-50%,-50%);
+       z-index: 2;
+       // background-color: rgba(255, 245, 202, 0.7);
+       border-radius: 4px;
+     }
+
+
   }
 
 
@@ -188,7 +310,7 @@ form {
        #workspaces {
         position: absolute;
         left: 48%;
-        top: 15%;
+        top: 20%;
         transform: translate(-50%,-50%);
         z-index: 2;
         // background-color: rgba(255, 245, 202, 0.7);

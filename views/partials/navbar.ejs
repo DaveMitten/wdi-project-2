@@ -1,31 +1,24 @@
 <% if (locals.isLoggedIn) { %>
-    <div class="container" id="navbarin">
-          <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="/logout">Arobase</a>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto ">
-                <li class="nav-item">
-                  <a class="nav-link" href="/">Home</a>
+        <nav>
+              <ul class="centered breadcrumb">
+                <li>
+                  <a href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/workspaces">Workspaces</a>
+                <li>
+                  <a href="/workspaces">Workspaces</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/users/<%= locals.user._id %>/workspaces">My Workspaces</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/workspaces/new">Add a new workspace</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/logout">Logout</a>
-                    </li>
-
+                <li>
+                  <a href="/users/<%= locals.user._id %>/workspaces">My Workspaces</a>
+                </li>
+                <li>
+                  <a href="/workspaces/new">Add a new Workspace</a>
+                </li>
+                <li>
+                  <a href="/logout">Logout</a>
+                </li>
               </ul>
-            </div>
+            </nav>
+
           </nav>
           </div>
           <% } else { %>
