@@ -19,6 +19,14 @@ form {
   height: 100vh;
   filter: blur(6px);
 }
+.l-in {
+  position: absolute;
+  left: 53%;
+  top: 44%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+
+}
 
 @media only screen
   and (min-device-width: 320px)
@@ -61,7 +69,7 @@ form {
       -2px -2px 0 #000,
       2px -2px 0 #000,
       -2px 2px 0 #000,
-      2px 2px 0 #000; 
+      2px 2px 0 #000;
 
     }
   }
