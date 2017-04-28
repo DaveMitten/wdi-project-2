@@ -1,4 +1,5 @@
 
+<div class="registration-style">
 <div class="page-header">
   <h1>Register
     <%# <small>Edit your workspace...</small>%>
@@ -10,36 +11,37 @@
 
 
 <form method="POST" action="/register">
-  <div class="form-group" class="col-sm-2 control-label">
+  <div class="form-group" class="col-2 control-label">
     <div style="float:left">
     <label for="username">Username</label>
   </div>
-    <div class="col-md-3">
+    <div class="col-3">
     <input type="text" name="username" class="form-control" id="username">
     </div>
     </div>
-   <div class="form-group" class="col-sm-2 control-label">
+   <div class="form-group" class="col-2 control-label">
      <div style="float:left">
    <label for="email">Email</label>
  </div>
-<div class="col-md-3">
+<div class="col-3">
      <input type="email" name="email" class="form-control" id="email" placeholder="email">
  </div>
  </div>
- <div class="form-group" class="col-sm-2 control-label">
+ <div class="form-group" class="col-2 control-label">
    <label for="password">Password</label>
-   <div class="col-md-3">
+   <div class="col-3">
    <input type="password" name="password" class="form-control" id="password" placeholder="password">
  </div>
  </div>
- <div class="form-group" class="col-sm-2 control-label">
+ <div class="form-group" class="col-2 control-label">
    <label for="passwordConfirmation">Password Confirmation</label>
-   <div class="col-md-3">
+   <div class="col-3">
    <input type="password" class="form-control" id="password" placeholder="password" name="passwordConfirmation">
  </div>
  </div>
 <button type="submit" class="btn btn-default">Register</button>
 </form>
+</div>
 
 
 
